@@ -8,6 +8,6 @@ router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(dele
 
 router.route('/:thoughtId/reactions').post(AddReact);
 
-router.route('/:thoughtId/reactions/ReactID').delete(deleteReact);
+router.route('/:thoughtId/reactions/:ReactID').delete(deleteReact);
 
 export default router;

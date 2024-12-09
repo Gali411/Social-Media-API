@@ -95,7 +95,7 @@ import { Request, Response } from 'express';
 
   export const deleteReact = async (req: Request, res: Response) => {
     try {
-      const thought = await Thought.findOneAndUpdate({ _id: req.params.thoughtId },  { $pull: { reactions: { reactionId: req.params.ReactID } } }, { runValidators: true, new: true });
+      const thought = await Thought.findOneAndUpdate({ _id: req.params.thoughtId }, { $pull: { reactions: { ReactID: req.params.ReactID } } }, { runValidators: true, new: true });
  
       if (!thought) {
         return res.status(404).json({ message: 'No thought found' });

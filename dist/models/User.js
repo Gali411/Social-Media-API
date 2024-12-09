@@ -1,7 +1,8 @@
 import { Schema, model } from 'mongoose';
 const userSchema = new Schema({
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    name: { type: String, required: true, unique: true, trim: true },
+    email: { type: String, required: true, unique: true, match: [/.+@.+\..+/, 'Must match an email address!'],
+    },
     thoughts: [
         {
             type: Schema.Types.ObjectId,
